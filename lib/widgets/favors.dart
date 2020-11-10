@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:karma_flutter/widgets/favorsType.dart';
+import 'package:karma_flutter/widgets/productDetails.dart';
 
 class Favors extends StatefulWidget {
   Favors({Key key}) : super(key: key);
@@ -145,13 +146,31 @@ class _FavorsState extends State<Favors> {
                 ),
                 Container(
                   child: Text(
-                    "Favors here",
+                    "List of Favors here",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                )
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  margin: const EdgeInsets.only(top: 10.0),
+                  child: MaterialButton(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "Product details",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      onPressed: () {
+                        var route = new MaterialPageRoute(
+                            builder: (BuildContext context) => new ProductDetails());
+                        Navigator.of(context).push(route);
+                      }),
+                ),
               ],
             ),
           ),
