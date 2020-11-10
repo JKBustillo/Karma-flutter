@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:karma_flutter/widgets/login.dart';
+import 'package:karma_flutter/widgets/home.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -136,7 +137,11 @@ class _RegisterState extends State<Register> {
                 ),
                 color: Colors.blue,
                 textColor: Colors.white,
-                onPressed: () {}),
+                onPressed: () {
+                  var route = new MaterialPageRoute(
+                      builder: (BuildContext context) => new Home());
+                  Navigator.of(context).pushReplacement(route);
+                }),
             Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(10.0),

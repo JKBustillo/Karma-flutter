@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:karma_flutter/widgets/register.dart';
+import 'package:karma_flutter/widgets/home.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -84,6 +85,9 @@ class _LoginState extends State<Login> {
                     _password = _passwordController.text;
                     print(_userName);
                   });
+                  var route = new MaterialPageRoute(
+                      builder: (BuildContext context) => new Home());
+                  Navigator.of(context).pushReplacement(route);
                 }),
             ),
             Container(
