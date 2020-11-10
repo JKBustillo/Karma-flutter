@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:karma_flutter/widgets/login.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -8,24 +9,21 @@ class Register extends StatefulWidget {
 Widget _entryField(String title, {bool isPassword = false}) {
   return Container(
     margin: EdgeInsets.symmetric(vertical: 10),
-    child: Column(
-      children: <Widget>[
-        SizedBox(
-          height: 5,
-        ),
-        TextField(          
-          decoration: InputDecoration(
+    child: Column(children: <Widget>[
+      SizedBox(
+        height: 5,
+      ),
+      TextField(
+        decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: title,
-          ),
         ),
-      ]
-    ),
+      ),
+    ]),
   );
 }
 
 class _RegisterState extends State<Register> {
-
   Widget _submitButton() {
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -50,6 +48,7 @@ class _RegisterState extends State<Register> {
       ),
     );
   }
+
   Widget _dataInputWidget() {
     return Column(
       children: [
@@ -65,7 +64,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("SignUp"),
+        title: new Text("Karma"),
       ),
       body: new Container(
         margin: const EdgeInsets.all(8.0),
@@ -76,7 +75,13 @@ class _RegisterState extends State<Register> {
             Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.all(20.0),
-              child: Text("Logo here"),
+              child: Text(
+                "Sign up",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueAccent,
+                    fontSize: 35),
+              ),
             ),
             Container(
               width: MediaQuery.of(context).size.width * 0.7,
@@ -116,15 +121,42 @@ class _RegisterState extends State<Register> {
               margin: const EdgeInsets.all(15.0),
               alignment: Alignment.center,
               child: TextField(
+                obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Password",
                 ),
               ),
             ),
-            RaisedButton(
-                child: Text("SignUp"),
+            MaterialButton(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  "Sign Up",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {}),
+            Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.all(10.0),
+              child: Text(
+                "Already have an account?",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+            MaterialButton(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  "Log In",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+                color: Colors.blue,
+                textColor: Colors.white,
                 onPressed: () {
+                  var route = new MaterialPageRoute(
+                      builder: (BuildContext context) => new Login());
+                  Navigator.of(context).pushReplacement(route);
                 }),
           ],
         ),
