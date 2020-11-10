@@ -66,6 +66,7 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       appBar: new AppBar(
         title: new Text("Karma"),
+        automaticallyImplyLeading: false,
       ),
       body: new Container(
         margin: const EdgeInsets.all(8.0),

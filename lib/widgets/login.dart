@@ -25,6 +25,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       appBar: new AppBar(
         title: new Text("Karma"),
+        automaticallyImplyLeading: false,
       ),
       body: new Container(
         margin: const EdgeInsets.all(8.0),
@@ -70,25 +71,24 @@ class _LoginState extends State<Login> {
             ),
             Container(
               margin: const EdgeInsets.only(top: 10.0),
-              child: 
-            MaterialButton(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  "Login",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                ),
-                color: Colors.blue,
-                textColor: Colors.white,
-                onPressed: () {
-                  setState(() {
-                    _userName = _userNameController.text;
-                    _password = _passwordController.text;
-                    print(_userName);
-                  });
-                  var route = new MaterialPageRoute(
-                      builder: (BuildContext context) => new Home());
-                  Navigator.of(context).pushReplacement(route);
-                }),
+              child: MaterialButton(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    setState(() {
+                      _userName = _userNameController.text;
+                      _password = _passwordController.text;
+                      print(_userName);
+                    });
+                    var route = new MaterialPageRoute(
+                        builder: (BuildContext context) => new Home());
+                    Navigator.of(context).pushReplacement(route);
+                  }),
             ),
             Container(
               alignment: Alignment.center,

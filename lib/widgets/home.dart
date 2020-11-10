@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: new AppBar(
           title: new Text("Karma"),
+          automaticallyImplyLeading: false,
         ),
         body: new Container(
           child: Column(
@@ -53,7 +54,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       var route = new MaterialPageRoute(
                           builder: (BuildContext context) => new Favors());
-                      Navigator.of(context).pushReplacement(route);
+                      Navigator.of(context).push(route);
                     }),
               ),
               MaterialButton(
