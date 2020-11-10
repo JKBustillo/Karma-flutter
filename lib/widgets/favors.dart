@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:karma_flutter/widgets/favorsType.dart';
 
 class Favors extends StatefulWidget {
   Favors({Key key}) : super(key: key);
@@ -40,8 +41,8 @@ class _FavorsState extends State<Favors> {
                       textColor: Colors.white,
                       onPressed: () {
                         var route = new MaterialPageRoute(
-                            builder: (BuildContext context) => new Favors());
-                        Navigator.of(context).pushReplacement(route);
+                            builder: (BuildContext context) => new FavorsType());
+                        Navigator.of(context).push(route);
                       }),
                 ),
                 Row(
@@ -111,12 +112,12 @@ class _FavorsState extends State<Favors> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Radio(
-                      value: 1,
+                      value: 5,
                       groupValue: id,
                       onChanged: (val) {
                         setState(() {
                           radioButtonItem = 'All';
-                          id = 1;
+                          id = 5;
                         });
                       },
                     ),
@@ -125,12 +126,12 @@ class _FavorsState extends State<Favors> {
                       style: new TextStyle(fontSize: 14.0),
                     ),
                     Radio(
-                      value: 2,
+                      value: 6,
                       groupValue: id,
                       onChanged: (val) {
                         setState(() {
                           radioButtonItem = 'My Favors';
-                          id = 2;
+                          id = 6;
                         });
                       },
                     ),
